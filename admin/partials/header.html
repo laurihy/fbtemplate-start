@@ -1,0 +1,21 @@
+<div class="row" id="header">
+
+    <h1 class="left">{{curcollection}}</h1>
+    
+    <div class="right">
+        <a target="_self" style="line-height: 45px;" href="/backlift/auth/logout">Log out</a>
+        <a ng-show="collectionKeys.length>1" href="#" data-dropdown="drop1" class="button small dropdown" style="margin-top: 8px; margin-bottom: 8px; margin-left: 10px;">Collections</a>
+    </div>
+
+    <ul id="drop1" class="f-dropdown" data-dropdown-content >
+      <li ng-repeat="collection in collectionKeys"><a href="/admin/{{collection}}">{{collection}}</a></li>
+    </ul>
+</div>
+
+<div class="row" style="padding-bottom: 0;">
+    <breadcrumbs></breadcrumbs>
+</div>
+
+
+
+

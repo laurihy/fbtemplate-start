@@ -1,0 +1,32 @@
+html, body {
+  min-height: 100% !important;
+  background: #eee;
+}
+
+.row {
+  width: 100% !important;
+  min-width: 100% !important;
+  padding: 20px;
+}
+
+#header {
+  background: #fff;
+  box-shadow: 0 1px 10px 2px #ccc;
+}
+
+#header h1 {
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  padding: 20px; 
+  border: 1px solid #ccc; 
+  background: #fff; 
+  float: left;
+}
+
+.button, button {
+  border-width: 0px !important;
+  -webkit-box-shadow: 0 0 0 #fff !important;
+}

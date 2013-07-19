@@ -1,0 +1,52 @@
+<customheader></customheader>
+
+<div class="row">
+    <div id="main">
+
+        <div data-alert class="alert-box success" ng-show="addedNewItem">
+          Added new element
+          <a href="#" class="close">&times;</a>
+        </div>
+
+        <div class="row" ng-repeat="key in keys" style="margin: 0; padding: 0;">
+
+              <label for="form-{{key}}" style="width: 200px;" class="inline left">{{key}}</label>
+              <input style="width: 400px;" class="left" type="text" id="form-{{key}}" ng-model="item[key]" />
+            
+        </div>
+
+
+        <div class="row" style="margin: 0 0 20px 0; padding: 10px 0; border-bottom: 1px solid #ccc;">
+            <p>Add new key:</p>
+            <form ng-submit="addKey()">
+                <div class="small-4 columns" style="padding-left: 0;">
+                    <input type="text" ng-model="newkey" value="" /></td>
+                </div>
+                <div class="small-7 columns" style="padding-left: 0;">
+                    <input type="text" ng-model="newval" value="" /></td>
+                </div>
+                <div class="small-1 columns" style="padding: 0;">
+                    <button type="submit" class="button small"><i class="foundicon-plus"></i></button>
+                </div>
+            </form>
+        </div>
+
+    <button ng-click="saveItem()">Save</button>
+
+    <div ng-repeat="saved in allsaves">
+        <div data-alert class="alert-box success" style="margin: 5px 0;">
+              Saved
+              <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+
+    <div ng-repeat="error in errors">
+        <div data-alert class="alert-box alert" style="margin: 5px 0;">
+              {{ error }}
+              <a href="#" class="close">&times;</a>
+        </div>
+    </div>
+
+    </div>
+
+</div>

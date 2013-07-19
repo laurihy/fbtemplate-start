@@ -1,0 +1,52 @@
+{{$ if not administrators in {$currentuser._groups} }}
+  {{$ include /admin/login.html }}
+{{$ endif }}
+
+{{$ if administrators in {$currentuser._groups} }}
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Backlift's databrowser</title>
+
+    <link type="text/css" href="/admin/styles/normalize.css" rel="stylesheet" />
+    <link type="text/css" href="/admin/styles/foundation.min.css" rel="stylesheet" />
+    <link type="text/css" href="/admin/styles/general_foundicons.css" rel="stylesheet" />
+    <link type="text/css" href="/admin/styles/general_foundicons_ie7.css" rel="stylesheet" />
+    <link type="text/css" href="/admin/styles/main.css" rel="stylesheet" />
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/4.1.6/js/foundation.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+
+    <script src="/admin/scripts/ngresource.js"></script>
+    <script src="/admin/scripts/helpers.js"></script>
+    <script src="/admin/scripts/collectionresource.js"></script>
+    
+    <script src="/admin/scripts/controllers/addnew.js"></script>
+    <script src="/admin/scripts/controllers/edit.js"></script>
+    <script src="/admin/scripts/controllers/list.js"></script>
+    <script src="/admin/scripts/controllers/main.js"></script>
+
+    <script src="/admin/scripts/routers/databrowser.js"></script>
+
+    <script src="/admin/scripts/directives/breadcrumbs.js"></script>
+    <script src="/admin/scripts/directives/customheader.js"></script>
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+  </head>
+  <body ng-app="list">
+
+      <ng-view>Loading...</ng-view>
+
+  <script>
+    $(document).foundation();
+  </script>
+
+
+  </body>
+</html>
+
+{{$ endif }}

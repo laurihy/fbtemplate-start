@@ -1,0 +1,30 @@
+<customheader></customheader>
+
+<div class="row">
+
+<div id="main">
+
+    <div style="margin-bottom: 20px; border-bottom: 1px solid #ddd;">
+        <a class="button small" href="{{curcollection}}/addnew"><i class="foundicon-plus"></i> Add new</a>
+        <span ng-show="archiveCount>0" style="margin-left: 10px; font-size: 0.9em; line-height: 1.1em;">
+            <a ng-click="restoreArchived()">Restore</a> or <a ng-click="del()">delete</a> archived ({{archiveCount}})
+        </span>
+    </div>
+
+    <p ng-show="items.length==0">No entries in this collection</p>
+
+    <table style="margin-bottom: 0;" ng-show="items.length>0">
+        <thead>
+            <tr>
+                <th style="padding-left: 1em; padding-right: 1em;" ng-repeat="key in keys"><a style="color: #000;" ng-click="changeFilter(key)">{{key}}</a></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tr ng-repeat="item in items | orderBy: sortKey:sortReverse" ng-show="!item.archived">
+            <td style="padding: 1em;" ng-repeat="key in keys" ng-click="">{{item[key]}}</td>
+            <td style="padding: 1em;"><a href="/admin/{{curcollection}}/{{item._id}}"><i class="foundicon-edit"></i></a></td>
+            <td style="padding: 1em;"><a ng-click="archive(item)"><i class="foundicon-remove"></i></a></td>
+        </tr>
+    </table>
+</div>

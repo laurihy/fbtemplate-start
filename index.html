@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>A Backlift "Hello World" App</title>
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <!-- 
+        These curly braces "{" and "}" are Backlift template tags.
+        Check out config.yml and backlift.github.com/docs
+    -->
+
+    {{$ styles }}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  </head>
+  <body>
+
+   
+  <div class="row">
+    <div class="container">
+      <div class="span12">
+
+        <div class="page-header">
+          <h1>Hello there!</h1>
+        </div>
+        <p>To view this on Facebook:</p>
+        <ol>
+            
+          <li>Go to <a href="http://developers.facebook.com/apps">http://developers.facebook.com/apps</a></li>
+          
+          <li>Create new app, give it a name and namespace, no hosting needed</li>
+          
+          <li>Toggle "<em>App on Facebook</em>" and fill following fields:</li>
+          <ul>
+              <dl class="dl-horizontal">
+                <dt>Canvas URL</dt>
+                <dd>https://{$ meta.app_url}/backlift/facebook/</dd>
+                <dt>Secure Canvas URL</dt>
+                <dd>https://{$ meta.app_url}/backlift/facebook/</dd>
+              </dl>
+          </ul>
+
+          <li>View App on Facebook!</li>
+
+        </ol>
+
+        <hr />
+
+        <h3>User variables on Facebook</h3>
+        <p>Make sure you've put your Facebook App Secret to config.yml file, like:</p>
+        <pre>facebook_secret: 'somerandomsecrethere'</pre>
+        <p>You can obtain App Secret from app's settings on Facebook</p>
+        <table class="table table-condensed">
+          <tr>
+            <td>Age</td>
+            <td>{$ user.age }</td>
+          </tr>
+          <tr>
+            <td>Locale</td>
+            <td>{$ user.locale }</td> 
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>{$ user.country }</td>
+          </tr>
+        </table>
+
+        <p><em>(Above has values for Age, Locale and Country only if this is viewed in Facebook and App Secret is set correctly)</em><p>
+
+
+      </div>
+    </div>
+  </div>
+
+  </body>
+</html>
