@@ -5,54 +5,6 @@
 # -------------------------------------------------------------------
 
 
-# compile: Backlift will select an appropriate compiler for each file 
-# that matches one of the patterns below. A '*' will match any string 
-# and '**' will match any folder. The compiler will be selected based 
-# on the extension of the matched file. The compiled file will be
-# placed in the same folder as the original file. The extensions that 
-# backlift recognizes are:
-#   .coffee     -> coffeescript compiler (outputs .js files)
-#   .less       -> lessc css compiler (outputs .css files)
-#   .jst        -> underscore templates (outputs .js files)
-#   .handlebars -> handlebars templates (outputs .js files)
-#
-# The following block is the default. Uncomment it to customize.
-
-# compile:
-# - /**/*.jst
-# - /**/*.handlebars
-# - /**/bootstrap*.less
-# - /**/*.coffee
-
-
-# scripts: An ordered list of javascript file patterns. Used to create 
-# a corresponding list of <script src="*"> tags. To render the result, 
-# place the {{$ scripts }} template variable at the bottom of your html
-# files. A '*' will match any string and '**' will match any folder.
-
-scripts:
-- libraries/scripts/jquery.js
-- libraries/scripts/underscore.js
-- libraries/scripts/*.js
-- app/**/*.js
-
-
-# styles: An ordered list of stylesheet file patterns. Used to create 
-# a list of <link type="text/css" rel="stylesheet" href="*"> tags. Use 
-# the {{$ styles }} template variable to render the result.
-
-styles:
-- libraries/styles/bootstrap.css
-- libraries/styles/bootstrap-responsive.css
-
-# optimize: The optimize flag controls whether or not backlift 
-# concatenates and minifies .js and .css files. The optimizer is 
-# slow and produces obfuscated code that cannot be easily debugged. 
-# For these reasons, optimization should be disabled while developing.
-
-optimize: no
-
-
 # autoroute: the automatic routing feature is useful for single-page 
 # websites that implement their own javascript routing. If autoroute
 # is set to 'yes', all requests to URLs that don't match a file or API 
@@ -68,15 +20,15 @@ development: yes
 # facebook_secret: secret key for each Facebook app. You can find it from
 # Facebook on app's settigns page with name "App Secret".
 
-facebook_secret: 'fb6e2013b59f5e252dc6cefbdc672d4d'
+facebook_secret: 'fillme'
 
-# collections
-# TODO: explain collections
+# collections: defines validation rules for Backlift data API.
+# There are various different rules. See complete reference from
+# https://www.backlift.com/docs/guides/validation.html
 collections:
     submissions:
         firstname: {required: yes}
         lastname: {required: yes}
         email: {type: email, required: yes}
         favoritecolor: {required: yes}
-        _public_permissions: {default: ''}
 
